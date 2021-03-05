@@ -1,0 +1,271 @@
+/* users/index ================================ */
+.users-heading {
+  text-align: center;
+  font-weight: 300;
+  margin: 50px 0 50px 0;
+  font-size: 48px;
+  color: #ffffff;
+  background-color: #199758;
+  border-radius: 50px 3px;
+}
+
+.users-index-item {
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 1px 10px #25a140;
+  display: table;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.user-left img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.user-name a {
+  font-weight: 600;
+}
+
+.user-name a:hover {
+  color: #3ecdc6;
+}
+
+.user-left {
+  float: left;
+  width: 10%;
+}
+
+.user-right {
+  width: 90%;
+  padding-left: 25px;
+  text-align: left;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.user-right a {
+  font-size: 35px;
+  margin-left: 30px;
+  border-bottom: double 5px #199758;
+  font-weight: 500;
+}
+
+.user-right p{
+  float:right
+}
+
+.user-right a:hover {
+  color: #5de970;
+}
+
+
+/* users/show ================================ */
+.user-show {
+  text-align: center;
+}
+
+.user {
+  margin-bottom: 20px;
+}
+
+.user img {
+  width: 300px;
+  height: 300px;
+  border-radius: 20%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  background-color: aliceblue;
+}
+
+.user h2 {
+  font-size:40px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #ffffff;
+  background-color: #199758;
+  border-radius: 20px;
+  margin: 20px 0 50px 0;
+}
+
+.user h1{
+  margin-right: 700px;
+  color: #ffffff;
+  background-color: #199758;
+  border-radius: 50px 3px;
+  margin-bottom: 10px;
+}
+
+
+.user p {
+  font-size: 28px;
+  margin-bottom: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  box-shadow: 0 2px 6px #c1ced7;
+  line-height: 2.4;
+}
+
+.user a {
+  color: #000000;
+  text-decoration: underline;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.user a:hover {
+  color: #5de970;
+}
+
+.user span {
+  color: #afb6bf;
+  font-weight: 200;
+  padding: 0 6px 0 8px;
+}
+
+.user-tabs {
+  margin-top: 40px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  
+}
+
+.user-tabs li {
+  float: left;
+}
+
+.user-tabs li.active {
+  border-bottom: 3px solid #199758;
+}
+
+.user-tabs li.active a {
+  color: #57575f;
+}
+
+.user-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+  font-size: 20px;
+}
+
+/* users/new, users/edit ================================ */
+.users-form input {
+  margin-bottom: 15px;
+}
+
+.user p{
+font-size: 30px;
+}
+
+
+
+
+
+
+
+.users-index-item2 {
+  padding: 10px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 1px 10px #25a140;
+  display: table;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.user-left2 img {
+  width: 60px;
+  height: 60px;
+  border-radius: 20%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.user-name a {
+  font-weight: 600;
+}
+
+.user-name a:hover {
+  color: #3ecdc6;
+}
+
+.user-left2 {
+  float: left;
+  width: 10%;
+}
+
+.user-right2 {
+  width: 90%;
+  padding-left: 25px;
+  text-align: left;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.user-right2 a {
+  font-size: 18px;
+  margin-left: 30px;
+  border-bottom: double 5px #199758;
+  font-weight: 500;
+}
+
+.user-right2 p{
+  float:right;
+}
+
+.user-right2 a:hover {
+  color: #5de970;
+}
+
+.status{
+  font-size: 20px;
+  width:170px;
+  font-weight: 900;
+  text-align: center;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border-top: solid 10px #ff7d6e;
+}
+
+.status p{
+  color: #000000;
+}
+.status2{
+  float:right;
+  font-size: 20px;
+  font-weight: 900;
+  width: 170px;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border-top: solid 10px #ff7d6e;
+}
+
+.status3{
+  font-size: 20px;
+  font-weight: 1000;
+  text-align: center;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border-top: solid 10px #ff7d6e;
+}
+
+.status2 p{
+  color: #000000;
+  
+}
+
+.status3 p{
+  color: #000000;
+}
+
+.post-right h1{
+  float: right;
+}

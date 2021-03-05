@@ -1,0 +1,31 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+    <%= form_tag("/goals/#{@goal.id}/update") do %>
+    <div class="form">
+    <div class="form-body">
+    <% @goal.errors.full_messages.each do |message| %>
+      <div class="form-error">
+        <%= message %>
+      </div>
+    <% end %>
+    <h1>《投稿内容》</h1>
+    <textarea name="content"><%= @goal.content %></textarea>
+    <h1>《期限の設定》</h1>
+    <div class="happy-tag">
+        <h1>月</h1>
+        <%= select_tag(:month , options_for_select(["1","2","3","4","5","6","7","8","9","10","11","12"])) %>
+        <h1>日 まで</h1>
+        <%= select_tag(:date , options_for_select(["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"])) %>
+        </div>
+
+    <h1>《目標達成したらチェック！》</h1>
+    <p>
+    <label><%= radio_button_tag :achievement, "達成!" %> 達成</label>
+    </p>
+    <input type="submit" value="保存">
+  </div>
+</div>
+<% end %>
+</div>
+</div>

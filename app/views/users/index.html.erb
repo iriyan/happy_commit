@@ -1,0 +1,32 @@
+<div class="main users-index">
+  <div class="container1">
+    <h1 class="users-heading">ユーザー一覧</h1>
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{user.image_picture}" %>">
+        </div>
+        <div class="user-right">
+          <%= link_to(user.name, "/users/#{user.id}") %>
+          <div class="status2">
+          <p>《 <%= user.status %> 》</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="explain2">
+   <h2>幸福度設定？</h2>
+   <p>自分の主観的な幸福度を数値化することによって、自分が何に対して幸福を感じやすいか、比較しやすくなるよ！</p>
+   <h3>　</h3>
+   <h2>幸福度の階級？</h2>
+   <p>投稿を重ねることで自分の幸福度合計値が増えていき、一定の基準値を越すと階級が振り分けられるよ！</p>
+   <h4>【階級】</h4>
+   <p>0~99p　　： "ビギナー"</p>
+   <p>100~199p： "ルーキー"</p>
+   <p>200~399p： "レギュラー"</p>
+   <p>400~699p： "エース"</p>
+   <p>700~999p： "ベテラン"</p>
+   <p>1000p↑　： "マスター"</p>
+</div>

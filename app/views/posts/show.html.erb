@@ -1,0 +1,68 @@
+<div class="main posts-show">
+  <div class="container-post">
+    <div class="posts-show-item">
+      <div class="post-user-name">
+        <img src="<%= "/user_images/#{@user.image_picture}" %>">
+        <%= link_to(@user.name, "/users/#{@user.id}") %>
+        <h1>幸福度【　<%= @post.point %>　】</h1>
+      </div>
+      <p>
+        <%= @post.content %>
+      </p>
+      <div class="post-picture">
+      <% if @post.post_picture %>
+      <img src="<%= "/post_pictures/#{@post.post_picture}" %>">
+      <% end %>
+      </div>
+      <div class="post-time">
+        <%= @post.created_at %>
+      </div>
+     
+      <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+        <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+          <span class="fa fa-hand-holding-heart like-btn-unlike"></span>
+     <% end %>
+      <% else %>
+        <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+          <span class="fa fa-hand-holding-heart like-btn"></span>   
+        <% end %>
+      <% end %>
+      <%= @likes_count %>
+      
+
+      <% if @post.user_id == @current_user.id %>
+      <div class="post-menus">
+        <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+        <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="comment-name">
+    <h3>コメント一覧</h3
+    </div>
+    <%= form_for [@post, @comment] do |f| %>     
+        <%= f.text_area :comment, class: "form-control"%>
+        <%= f.submit '送信', class: "btn-sm btn-primary" %>
+    <% end %>
+   
+  
+    <table>
+      <thead>
+          <td class="nameee">《 投稿者 》</td>
+          <td class="comment2">《 コメント内容 》</td>
+      </thead>
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr>
+            <td class="nameee"><%= comment.user.name %></td>
+            <td class="commenttt"><%= comment.comment %></td>
+            <td><%= link_to "削除", post_comment_path(@post, comment), method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    
+  </div>
+</div>

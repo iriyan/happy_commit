@@ -1,0 +1,41 @@
+<div class="main posts-show">
+  <div class="container-goal">
+    <div class="goals-show-item">
+      <div class="goal-user-name">
+       <img src="<%= "/user_images/#{@user.image_picture}" %>">
+       <%= link_to(@user.name, "/users/#{@user.id}") %>
+       <h1><%= @goal.achievement %></h1>
+      </div>
+
+      <p>
+        <%= @goal.content %>
+        <div class="deadline">
+          <h3>期限：<%= @goal.month %>月<%= @goal.date %>日まで</h3>
+        </div>
+      </p>
+
+      <div class="goal-time">
+        <%= @goal.created_at %>
+      </div>
+
+      <% if Fight.find_by(user_id: @current_user.id, goal_id: @goal.id) %>
+      <%= link_to("/fights/#{@goal.id}/destroy", {method: "post"}) do %>
+        <span class="fa fa-fire like-btn-unlike">ファイト!</span>
+      <% end %>
+    <% else %>
+      <%= link_to("/fights/#{@goal.id}/create", {method: "post"}) do %>
+        <span class="fa fa-fire like-btn">ファイト!</span>
+      <% end %>
+    <% end %>
+    <%= @fights_count %>
+
+      <% if @goal.user_id == @current_user.id %>
+      <div class="goal-menus">
+        <%= link_to("編集", "/goals/#{@goal.id}/edit") %>
+        <%= link_to("削除", "/goals/#{@goal.id}/destroy", {method: "post"}) %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

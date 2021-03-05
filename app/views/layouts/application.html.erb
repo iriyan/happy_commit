@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HappyCommit</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    
+
+  </head>
+
+  <body>
+  <header>
+    <div class="header-logo">
+      <%= link_to("HappyCommit", "/") %>
+    </div>
+    <h3 class="time">本日は『<%= Date.today %>』</h3>
+
+    <ul class="header-menus">
+      <% if session[:user_id] %>   
+        <li>
+        <%= link_to("MyProfile", "/users/#{@current_user.id}") %>
+        </li>
+        <li>
+          <%= link_to("Happy-List", "/posts/index") %>
+        </li>
+        <li>
+          <%= link_to("Goal-List", "/goals/index") %>
+        </li>
+        <li>
+          <%= link_to("User-List", "/users/index") %>
+        </li>
+        <li>
+          <%= link_to("Logout", "/logout", {method: "post"}) %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to("HappyCommitとは？", "/about") %>
+        </li>
+        
+      <% end %>
+    </ul>
+  </header>
+
+  <% if flash[:notice] %>
+    <div class="flash">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  
+  <%= yield %>
+</body>
+</html>

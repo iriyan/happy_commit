@@ -1,0 +1,54 @@
+<div class="main goals-index">
+ <div class="container1">
+  <h1 class="form-heading">目標宣言</h1>
+    <div class="goal-setting">
+  <li><%= link_to("目標を宣言する", "/goals/new") %></li>
+  </div>
+    <% @goals.each do |goal| %>
+       <div class="goals-index-item">
+          <div class="post-left">
+            <img src="<%= "/user_images/#{goal.user.image_picture}" %>">
+          </div>
+              <div class="post-right">
+              <div class="status">
+          <p>《 <%= goal.user.status %> 》</p>
+          </div>
+                <div class="goal-user-name">
+                  <%= link_to(goal.user.name, "/users/#{goal.user.id}") %>
+                  <h1><%= goal.achievement %></h1>
+                </div>
+                <div class="post-content">
+                <%= link_to(goal.content, "/goals/#{goal.id}") %>
+                </div>
+                <div class="deadline">
+                <h3>期限：<%= goal.month %>月<%= goal.date %>日まで</h3>
+                </div>
+           </div>
+      </div>
+     <% end %>
+     <div class="pagination">
+    <%= paginate @goals %>
+  </div>
+ </div>
+</div>
+<div class="explain">
+<h2>目標宣言とは？</h2>
+<p>通常の目標設定とは違い、自分の幸福に関係する目標を宣言してみよう！</p>
+<p>例：幸福度ポイント80p目指す, 今月新しい挑戦を２つ！</p>
+</div>
+<div class="side1">
+<h2>　 ユーザー一覧 　</h2>
+<% @users.each do |user| %>
+  <div class="users-index-item2">
+    <div class="user-left2">
+      <img src="<%= "/user_images/#{user.image_picture}" %>">
+    </div>
+    <div class="user-right2">
+      <%= link_to(user.name, "/users/#{user.id}") %>
+    </div>
+  </div>
+<% end %>
+<div class="pagination">
+    <%= paginate @goals %>
+  </div>
+</div>
