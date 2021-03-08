@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_095202) do
+ActiveRecord::Schema.define(version: 2021_03_08_134837) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -71,8 +71,6 @@ ActiveRecord::Schema.define(version: 2021_03_03_095202) do
     t.string "image_picture"
     t.string "password"
     t.string "tweet"
-    t.integer "grade_id"
-    t.integer "score"
   end
 
   add_foreign_key "comments", "posts"
