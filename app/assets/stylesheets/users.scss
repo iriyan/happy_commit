@@ -233,19 +233,22 @@ font-size: 30px;
     color: #ff7d6e;
     background: #ffebe9;
     border-top: solid 10px #ff7d6e;
+  border-radius: 10px;
 }
 
 .status p{
   color: #000000;
+  padding-left: 5px;
 }
 .status2{
-  float:right;
+  float: right;
   font-size: 20px;
   font-weight: 900;
-  width: 170px;
     color: #ff7d6e;
     background: #ffebe9;
     border-top: solid 10px #ff7d6e;
+    border-radius: 10px;
+    
 }
 
 .status3{
@@ -255,11 +258,12 @@ font-size: 30px;
     color: #ff7d6e;
     background: #ffebe9;
     border-top: solid 10px #ff7d6e;
+    border-radius: 20px;
 }
 
 .status2 p{
   color: #000000;
-  
+  padding: 0 5px 0 10px;
 }
 
 .status3 p{
