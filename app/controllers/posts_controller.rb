@@ -28,12 +28,6 @@ class PostsController < ApplicationController
     )
     @post.save
 
-    if params[:post_picture]
-      @post.post_picture = "#{@post.id}.jpg"
-      image = params[:post_picture]
-      File.binwrite("public/post_pictures/#{@post.post_picture}", image.read)
-    end
-
     if @post.save
       flash[:notice] = "投稿完了！"
     redirect_to("/posts/index")
